@@ -1,0 +1,114 @@
+
+.block__news
+{
+    width: 875px;
+    height: 450px;
+    padding: 10px 10px 25px 10px;
+    background-color: white;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    box-shadow: 0px 0px 6px 10px rgb(0 0 0/25%);
+    border-radius: 10px;
+    padding: 5px 30px;
+    justify-content: space-between;
+}
+.button__news
+{
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+.news-block
+{
+    display: grid;
+    margin-top: 50px;
+    grid-template-columns: repeat(auto-fill, 875px);
+    grid-template-rows: repeat(auto-fill , 450px);
+    grid-gap: 100px;
+    justify-content: center;
+    margin-bottom: 100px;
+    justify-items: center;
+    align-content: center;
+}
+.news-img
+{
+    margin: auto 0px ;
+    max-width: 430px;
+    max-height: 400px;
+    float: left;
+    object-fit: cover;
+}
+.post_title
+{
+    text-align: left;
+    margin-left: 26px;
+}
+.news__info p
+{
+
+    margin: 15px 30px;
+    width: 270px;
+    text-align: left;
+
+}
+.newspage-block
+{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+}
+.div__news
+{
+    display: flex;
+    width: 1250px;
+    height: 450px;
+    padding: 10px 10px 25px 10px;
+    background-color: white;
+    box-shadow: 0px 0px 6px 10px rgb(0 0 0/25%);
+    border-radius: 10px;
+    border: none;
+    justify-content: space-evenly;
+    margin: 50px auto;
+}
+.news__stuff
+{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: flex-start;
+    justify-content: space-around;
+    max-width: 50%;
+}
+.post__text
+{
+    height: 191px;
+    -webkit-line-clamp: 10;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.post_title
+{
+    font-size: 32px;
+    max-width: 300px;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.dve_knopki
+{
+    display: flex;
+    margin-top: 400px;
+    margin-left: -150px;
+}
+.dve_knopki button
+{
+    margin: 0 10px;
+}
