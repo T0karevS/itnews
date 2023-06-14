@@ -67,8 +67,9 @@
     @php 
         foreach ($allposts->reverse() as $post) {
              echo '<div class="div__news">
-                     <p class="">'.$post->category.'</p>
-                     <p class="search__text2">'.$post->content.'</p>
+                     <p>'.$post->category.'</p>
+                     <p class="search__text2"> <a class="search__text2" href="/post/'.$post->id.'">'.$post->content.'</a></p>
+                     <!-- <p class="search__text2">'.$post->content.'</p> -->
                     <img class="news-img" src="	http://127.0.0.1:8000/posts/'.$post->img.'">
                 </div>';
         }

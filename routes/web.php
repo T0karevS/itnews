@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use  App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\NewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,3 +55,4 @@ Route::get('/', [App\Http\Controllers\PostController::class, 'getPost'])->name('
 Route::post('/profile', [App\Http\Controllers\ProfileController::class, 'UpdPost'])->name('user.profile.UpdPost');
 Route::post('/profile', [App\Http\Controllers\ProfileController::class, 'store'])->name('user.profile.store');
 Route::get('/user/{id}', [ProfileController::class, 'index']);
+Route::get('/post/{id}', [NewsController::class, 'index']);
