@@ -10,15 +10,38 @@
 </head>
 <body>
     <section>
-        <div class="punkt">
-                         <p>Имя:</p>
-                         <P>{{  $allinfo->first()->content; }}</P>
-                     </div>
-                     <DIV class="punkt">
-                         <p>email:</p>
+        <div class="newspage__block">
+                         <P>{{  $allinfo->first()->newsname; }}</P>
+                    
                          <p>{{ $allinfo->first()->category; }}</p>
-                     </DIV> 
-                     <img class="pfp" src="/posts/{{ $allinfo->first()->img; }}" alt="">
+                   
+                   
+                         <p>{{ $allinfo->first()->content; }}</p>
+                   
+                     <img class="news__picture" src="/posts/{{ $allinfo->first()->img; }}" alt="">
+        <form class="posts" method="POST" action="{{route('user.news.comments')}}" enctype="multipart/form-data">
+               @CSRF
+               <div class="aboba1">
+                    <input class="textpost" id="content" name="text" type="text" >
+                    <button class="btnpost" type="submit">
+                    <input type="hidden" name="post_id" value="{{ $allinfo->first()->id }}">
+               </div> 
+        </form>
+        @php
+        foreach ($allcomms->reverse() as $comment) {
+            $user_id = $comment->user_id;
+            $allusers = DB::table('users')->where('id', $user_id)->get();
+            echo '<div class="div__comms">
+                     <img class="pfp__comms" src="' . sprintf('/avatars/%s', $allusers->first()->avatar) . '" alt="">
+                     <div class="profile__small">
+                        <p class="search__text2"> <a class="search__text2" href="/user/'.$comment->user_id.'">'.$allusers->first()->name.'</a></p>
+                        <p class="comment__text">'.$comment->text.'</p> 
+                    </div> 
+                    
+                     
+                </div>';
+            }
+        @endphp
     </section>
 </body>
 </html>

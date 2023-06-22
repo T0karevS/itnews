@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Auth;
@@ -54,5 +55,9 @@ Route::post('/', [App\Http\Controllers\PostController::class, 'newPost'])->name(
 Route::get('/', [App\Http\Controllers\PostController::class, 'getPost'])->name('user.home.getPosts');
 Route::post('/profile', [App\Http\Controllers\ProfileController::class, 'UpdPost'])->name('user.profile.UpdPost');
 Route::post('/profile', [App\Http\Controllers\ProfileController::class, 'store'])->name('user.profile.store');
+// Route::get('/post/{id}', [NewsController::class, 'getComment'])->name('user.news.comments');
+Route::post('/post/', [NewsController::class, 'newComment'])->name('user.news.comments');
 Route::get('/user/{id}', [ProfileController::class, 'index']);
-Route::get('/post/{id}', [NewsController::class, 'index']);
+Route::get('/post/{id}', [NewsController::class, 'index'])->name('user.news.post');
+Route::get('/admin',  [App\Http\Controllers\AdminController::class, 'getPost'])->name('admin');
+Route::delete('/post/delete/{id}', [AdminController::class, 'DeletePost'])->name('user.admin.delete');

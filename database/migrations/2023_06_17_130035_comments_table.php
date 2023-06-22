@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->string('newsname');
-            $table->integer('user_id');
-            $table->string('category');
-            $table->text('content');
-            $table->string('img')->nullable;
-            $table->timestamps();
+            $table->string('text');
+            $table->string('user_id');
+            $table->string('post_id');
         });
     }
 

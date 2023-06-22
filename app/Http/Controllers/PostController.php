@@ -10,14 +10,17 @@ class PostController extends Controller
 {
     public function newPost(Request $request)
     {
-        
-        $newCon = $request->content;
+        if(Auth::id()==null){
+            return view('/login');
+        }
+        $name = $request->newsname;
+        $content = $request->content;
         $userID = Auth::id();  
         $category = $request->category;
         $imgName = time().'.'.$request->img->getClientOriginalExtension();
         $request->img->move(public_path('posts'), $imgName);
     
-        DB::table('posts')->insert(['img'=>$imgName, 'content'=>$newCon, 'user_id'=>$userID, 'category'=>$category]);
+        DB::table('posts')->insert(['img'=>$imgName, 'newsname'=>$name, 'content'=>$content,'user_id'=>$userID, 'category'=>$category]);
     
         return back()->with('success');
     }
@@ -26,9 +29,9 @@ class PostController extends Controller
     $allposts = DB::table('posts')->get();
     return view('/index', compact('allposts'));
    }
-   public function getPostbyCat($category)
-   {
-    $allposts = DB::table('posts')->where('category', $category)->get();
-    return view('/index', compact('allposts'));
-   }
+//    public function getPostbyCat($category)
+//    {
+//     $allposts = DB::table('posts')->where('category', $category)->get();
+//     return view('/index', compact('allposts'));
+//    }
 }
