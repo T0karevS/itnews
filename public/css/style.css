@@ -458,7 +458,8 @@ section
     top: 120px;
     display: flex;
     justify-content: center;
-    width: 500px;
+    flex-direction: column;
+    width: 1200px;
     margin: auto;
     margin-bottom: 200px;
 }
@@ -480,22 +481,24 @@ section
     text-align: center;
 }
 .btnpost{
-    background-image:url("../img/plane.svg");
     background-repeat: no-repeat;
-    background-color: #fff;
+    background-color: #0079AE;
     position: absolute;
-    
+    color: white;
+    font-weight: 550;
     outline: none;
     border: none;
     background-position: center;
-    height: 30px;
-    width: 30px;
+    height: 60px;
+    width: 150px;
 }
 .textpost{
-    height: 30px;
+    padding: 0px 20px;
+    height: 60px;
     outline: none;
-    width: 100%;
+    width: 1000px;
     border: none;
+    margin-right: 200px;
 }
 .imginput{
     display: none;

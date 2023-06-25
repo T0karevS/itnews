@@ -5,7 +5,7 @@
                 <img src="/img/svg/logo.svg" class="logo">
             </a>
         </div>
-        <form method="get" class="search">
+        <form method="get" action="{{route('user.search.post')}}" class="search">
             <input type="text" name="search" class="header__search">
             <button type="submit" class="header__btn"></button>
             
@@ -14,7 +14,7 @@
                 <a href="../login"><img src="img/svg/user.svg" class="user_pic"></a>
                 <p><a href="../login">войти</a></p>
             </div> -->
-            
+        
             @guest
 
                             @if (Auth::user()==null)
@@ -40,6 +40,6 @@
                                 </div>
                             </li>
                         @endguest
-        </form>
+       </form>
     </div>
 </header>

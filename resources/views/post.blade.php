@@ -16,17 +16,18 @@
                          <p>{{ $allinfo->first()->category; }}</p>
                    
                    
-                         <p>{{ $allinfo->first()->content; }}</p>
+                         {!! html_entity_decode($allinfo->first()->content) !!}
                    
                      <img class="news__picture" src="/posts/{{ $allinfo->first()->img; }}" alt="">
         <form class="posts" method="POST" action="{{route('user.news.comments')}}" enctype="multipart/form-data">
                @CSRF
                <div class="aboba1">
-                    <input class="textpost" id="content" name="text" type="text" >
-                    <button class="btnpost" type="submit">
+                    <input class="textpost"  name="text" type="text" placeholder="Напишите комментарий">
+                    <button class="btnpost" type="submit">Оставить комментарий</button>
                     <input type="hidden" name="post_id" value="{{ $allinfo->first()->id }}">
                </div> 
         </form>
+        <h2>Комментарии</h2>
         @php
         foreach ($allcomms->reverse() as $comment) {
             $user_id = $comment->user_id;

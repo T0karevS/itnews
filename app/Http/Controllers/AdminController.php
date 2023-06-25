@@ -8,10 +8,14 @@ use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
+
     public function getPost()
     {
-    $allposts = DB::table('posts')->get();
-    return view('/admin', compact('allposts'));
+        if(  Auth::id()==null|| Auth::user()->role==1){
+            return redirect('/');
+        }
+        $allposts = DB::table('posts')->get();
+        return view('/admin', compact('allposts'));
     }
     public function DeletePost($id)
     {

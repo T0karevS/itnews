@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use  App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,3 +62,4 @@ Route::get('/user/{id}', [ProfileController::class, 'index']);
 Route::get('/post/{id}', [NewsController::class, 'index'])->name('user.news.post');
 Route::get('/admin',  [App\Http\Controllers\AdminController::class, 'getPost'])->name('admin');
 Route::delete('/post/delete/{id}', [AdminController::class, 'DeletePost'])->name('user.admin.delete');
+Route::get('/search/', [SearchController::class, 'GetPost'])->name('user.search.post');

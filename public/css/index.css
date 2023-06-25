@@ -62,15 +62,13 @@
 .div__news
 {
     display: flex;
-    width: 1250px;
+    width: 1200px;
     height: 450px;
-    padding: 10px 10px 25px 10px;
     background-color: white;
-    box-shadow: 0px 0px 6px 10px rgb(0 0 0/25%);
     border-radius: 10px;
     border: none;
-    justify-content: space-evenly;
-    margin: 50px auto;
+    justify-content: space-between;
+    margin: 40px auto 20px;
 }
 .news__stuff
 {
@@ -111,4 +109,13 @@
 .dve_knopki button
 {
     margin: 0 10px;
+}
+.div__news__info{
+    margin: 0px 0px 0px 30px;
+}
+.div__news__photo{
+    width: 600px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
 }

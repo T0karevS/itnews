@@ -10,48 +10,19 @@
     <title>Document</title>
 </head>
 <body>
-<!-- <header>
-    <div class="header">
-        <div class="logo_div">
-            <a class="image__a" href="index.php">
-                <img src="img/svg/logo.svg" class="logo">
-            </a>
-        </div>
-        <form method="get" class="menu">
-            <input type="hidden" name="category" value="Web">
-            <input type="submit" value="Категории">
-        </form>
-        <form method="get" class="menu" >
-            <input type="hidden" name="category" value="Tech">
-            <input type="submit" value="Недавние">
-        </form>
-        <form method="get" class="menu" >
-            <input type="hidden" name="category" value="Design">
-            <input type="submit" value="О нас">
-        </form>
-        <form method="get" class="search">
-            <input type="text" name="search" class="header__search">
-            <button type="submit" class="header__btn"></button>
-            
-            
-            <div class="header__reg">
-                <a href="../login"><img src="img/svg/user.svg" class="user_pic"></a>
-                <p><a href="../login">войти</a></p>
-            </div>
-    </div>
-</header> -->
-
 <div class="newspage-block">
     @php 
         foreach ($allposts->reverse() as $post) {
-             echo '<div class="div__news">
-                     <div>
+            echo '<div class="div__news">
+                    <div class="div__news__info">
                         <p class="search__text2"> <a class="search__text2" href="/post/'.$post->id.'">'.$post->newsname.'</a></p>
-                        <p>'.$post->category.'</p>
-                        <p class="post__text2">'.$post->content.'</p>
-                     </div>
-                     <!-- <p class="search__text2">'.$post->content.'</p> -->
-                    <img class="news-img" src="	http://127.0.0.1:8000/posts/'.$post->img.'">
+                        <p class="search__text3">'.$post->category.'</p>
+                        <p>'.$post->content.'</p>
+                    </div>
+                    <div class="div__news__photo">
+                        <img class="news-img" src="	http://127.0.0.1:8000/posts/'.$post->img.'">
+                    </div>
+                    
                 </div>';
         }
     @endphp
