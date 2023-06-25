@@ -14,7 +14,7 @@
                @CSRF
                <div class="aboba1">
                     <input class="textpost" id="newsname" name="newsname" type="text" require>
-                    <button onclick="myFunction()" class="btnpost" type="submit">
+                    <button onclick="myFunction()" class="btnpost" type="submit">Опубликовать новость</button>
                </div> 
                <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
             <!-- Create the editor container -->
@@ -54,21 +54,23 @@
    <div class="newspage-block">
     @foreach ($allposts->reverse() as $post)
         <div class="div__news">
-            <div class="div__news__info">
                 <p class="search__text2">
                     <a class="search__text2" href="/post/{{$post->id}}">{{$post->newsname}}</a>
                 </p>
-                <p>{{$post->category}}</p>
-                {!! html_entity_decode($post->content) !!}
+            <div class="div__news__info">
+                <div class="div__news__photo"> 
+                    <img class="news-img" src="http://127.0.0.1:8000/posts/{{$post->img}}">   
+                </div> 
+                <div >
+                     <!-- <p>{{$post->category}}</p> -->
+                    {!! html_entity_decode($post->content) !!}
                     <form action="post/delete/{{$post->id}}" method="post">
                     @csrf
-                        <input type="hidden" name="_method" value="DELETE">
-                        <button type="submit">Delete Post</button>
+                        <input type="hidden" name="_method"  value="DELETE">
+                        <button class="btnpost" type="submit">Delete Post</button>
                     </form> 
-            </div>
-            <div class="div__news__photo"> 
-                <img class="news-img" src="http://127.0.0.1:8000/posts/{{$post->img}}">   
-            </div>              
+                </div>     
+            </div>               
         </div>
     @endforeach
 </div>

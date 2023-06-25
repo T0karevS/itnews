@@ -19,7 +19,6 @@ class AdminController extends Controller
     }
     public function DeletePost($id)
     {
-        
         DB::table('posts')->where('id', $id)->delete();
         return redirect('/admin');
     }

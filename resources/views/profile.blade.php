@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="userinfo">
-                     <img class="pfp" src="/avatars/{{ $user->first()->avatar; }}" alt="">
+                     <img class="pfp" src="/avatars/{{ $user->first()->avatar}}" alt="">
                      <div class="innerinfo">
                  
                      <div class="punkt">
@@ -23,7 +23,8 @@
                          <p>{{$user->first()->email;}}</p>
                      </DIV>    
                      @if(Auth::id()==$user->first()->id)
-                  <button id="btn" class="showupdate" onclick="showupdate">Изменить профиль</button>
+                  <button id="btn" class="showupdate" onclick="showupdate">Изменить аватар</button>
+                  @endif
                    <form method="POST" class="Updform" id="Upd" style="display: none;" action="{{ route('user.profile.store') }}" enctype="multipart/form-data">
                       @csrf
                       <!-- <div class="row mb-3 align-items-center">
@@ -53,7 +54,6 @@
                             </div>
                         </div> -->
                       <div class="row mb-3" >
-                          <label for="avatar" class="col-md-4 col-form-label text-md-end">{{ __('Avatar') }}</label>
                   <div class="col-md-6">
                       <input id="avatar" type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar" value="{{ old('avatar') }}" required autocomplete="avatar">
                       @error('avatar')
@@ -71,7 +71,9 @@
                   </div>
               </div>
               </form>
-              @endif
+            @if(Auth::user()->role == 2)
+                </br><a class="admin__link" href="/admin">Перейти на страницу администратора</a>
+            @endif
               <script>
                 var btn = document.getElementById('btn');
                     btn.onclick = function() {

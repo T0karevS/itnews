@@ -35,7 +35,7 @@
             echo '<div class="div__comms">
                      <img class="pfp__comms" src="' . sprintf('/avatars/%s', $allusers->first()->avatar) . '" alt="">
                      <div class="profile__small">
-                        <p class="search__text2"> <a class="search__text2" href="/user/'.$comment->user_id.'">'.$allusers->first()->name.'</a></p>
+                        <p class="profile__name"> <a class="profile__name" href="/user/'.$comment->user_id.'">'.$allusers->first()->name.'</a></p>
                         <p class="comment__text">'.$comment->text.'</p> 
                     </div> 
                     

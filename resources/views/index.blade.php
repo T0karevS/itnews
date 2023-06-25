@@ -14,16 +14,17 @@
     @php 
         foreach ($allposts->reverse() as $post) {
             echo '<div class="div__news">
+                    <p class="search__text2"> <a class="search__text2" href="/post/'.$post->id.'">'.$post->newsname.'</a></p>
                     <div class="div__news__info">
-                        <p class="search__text2"> <a class="search__text2" href="/post/'.$post->id.'">'.$post->newsname.'</a></p>
-                        <p class="search__text3">'.$post->category.'</p>
-                        <p>'.$post->content.'</p>
+                        <div class="div__news__photo">
+                            <img class="news-img" src="	http://127.0.0.1:8000/posts/'.$post->img.'">
+                        </div>
+                        <div>
+                            <!-- <p class="search__text3">'.$post->category.'</p> -->
+                            <p>'.$post->content.'</p>
+                        </div>
                     </div>
-                    <div class="div__news__photo">
-                        <img class="news-img" src="	http://127.0.0.1:8000/posts/'.$post->img.'">
-                    </div>
-                    
-                </div>';
+                    </div>';
         }
     @endphp
 </div>

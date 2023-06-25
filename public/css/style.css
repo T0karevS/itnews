@@ -56,11 +56,12 @@ body
 {
     display: flex;
     align-items: center;
-    margin: 0px 50px;
+    margin: 0px 100px;
 }
 .search__text2{
     color: black;
     font-size: 26px;
+    margin-left: 30px;
     
 }
 .post__text2{
@@ -110,6 +111,7 @@ body
     position: relative;
     border: 2px solid white;
     cursor: pointer;
+    margin-right: 100px;
 }
 .header__reg
 {
@@ -162,7 +164,7 @@ body
     width: 30px;
 }
 .form-control{
-    width: 500px;
+    
 }
 .form-container input {
     text-align: center;
@@ -272,10 +274,6 @@ section
     display: flex;
     flex-direction: column;
     width: 200px;
-
-}
-.pfp-update
-{
 
 }
 .pfp-update::-webkit-file-upload-button {
@@ -444,10 +442,10 @@ section
 }
 .userinfo{
     margin: auto;
-    width: 800px;
+    width: 1200px;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-evenly;
+    align-items: flex-start;
 }
 .userinfo img{
     height: 220px;
@@ -466,7 +464,8 @@ section
 .aboba1{
     display: flex;
     align-items: center;
-    justify-content: flex-end
+    justify-content: flex-end;
+    margin-bottom: 20px;
 }
 .aboba2{
     display: flex;
@@ -545,4 +544,18 @@ section
 .comment__text{
     margin: 20px 0px 20px;
     max-width: 700px;
+}
+.innerinfo{
+    width: 400px;
+    max-height: 600px;
+    margin: 50px 0px;
+}
+.admin__link{
+    color: black;
+    top: 400px;
+    position: absolute;
+}
+.profile__name{
+    color: black;
+    font-size: 26px;
 }

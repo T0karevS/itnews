@@ -35,9 +35,10 @@
 {
     margin: auto 0px ;
     max-width: 600px;
-    max-height: 400px;
+    max-height: 350px;
     float: left;
     object-fit: cover;
+    border-radius: 10px;
 }
 .post_title
 {
@@ -67,7 +68,8 @@
     background-color: white;
     border-radius: 10px;
     border: none;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: flex-start;
     margin: 40px auto 20px;
 }
 .news__stuff
@@ -112,10 +114,14 @@
 }
 .div__news__info{
     margin: 0px 0px 0px 30px;
+    display: flex;
+
 }
 .div__news__photo{
-    width: 600px;
-    height: 450px;
+    width: 570px;
+    margin: 0px 0px 0px 30px;
+    height: 350px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+
 }
